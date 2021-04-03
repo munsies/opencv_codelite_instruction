@@ -1,0 +1,20 @@
+Instructions on how to add/use opencv libraries in codelite ubuntu 16.04 without using opencv.pc or pkg-config --libs --cflags opencv. Please see screenshots for suggestions
+
+1. Locate libraries in your computer. Search for prefix with lib or suffix with .so/.so.x.x (version number)(inst_1.png),Include.hpp(inst_2.png)
+2. In codelite, project and go to setting. (inst_3.png)
+3. In compiler, copy and paste include path (inst_4.png)
+4. In linker, at library search paths: copy and paste library path(inst_5.png)
+5. In linker, at libraries: add iibraries those are needed for your project. (inst_6.png)
+
+Note, extra steps were needed for libraries with version number. (inst_7.png)
+1. Create file inside /etc/ld.so.conf.d/opencv.conf
+2. In the file add path location of your opencv library.
+3. After saving file run: ldconfig -v
+
+After this step, I was able to use libraries with version numbers.
+
+
+
+
+
+
